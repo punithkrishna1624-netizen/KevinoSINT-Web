@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KevinoSINT — OSINT Console</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="scanlines"></div>
+
+  <aside class="sidebar">
+    <div class="brand">
+      <img src="/static/kevin-avatar.jpeg" alt="KevinoSINT profile">
+      <div>
+        <div class="brand-name">KEVINO<span>SINT</span></div>
+        <small>OSINT CONSOLE</small>
+      </div>
+    </div>
+
+    <div class="profile-card">
+      <img src="/static/kevin-avatar.jpeg" alt="Profile">
+      <div>
+        <strong>hackwithkevin_</strong>
+        <small>ETHICAL OSINT</small>
+      </div>
+    </div>
+
+    <nav>
+      <button class="nav active">⌕ <span>Investigation</span></button>
+      <button class="nav" onclick="setType('email')">✉ <span>Email OSINT</span></button>
+      <button class="nav" onclick="setType('phone')">☎ <span>Phone OSINT</span></button>
+      <button class="nav" onclick="setType('username')">◉ <span>Username Hunt</span></button>
+      <button class="nav" onclick="setType('domain')">⌁ <span>Domain Intel</span></button>
+      <button class="nav" onclick="setType('ip')">◈ <span>IP Intelligence</span></button>
+    </nav>
+
+    <div class="side-footer">
+      <span class="dot"></span> LOCAL ENGINE ONLINE
+    </div>
+  </aside>
+
+  <main>
+    <header class="topbar">
+      <div>
+        <span class="eyebrow">AUTHORIZED / PUBLIC DATA ONLY</span>
+        <h1>Investigation Console</h1>
+      </div>
+      <div class="status"><span class="dot"></span> SYSTEM ONLINE</div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="tag">KEVINOSINT v1.0</span>
+        <h2>Investigate the <span>public footprint.</span></h2>
+        <p>Analyze email, phone metadata, usernames, domains and IP intelligence from public or authorized sources.</p>
+      </div>
+      <img class="hero-avatar" src="/static/kevin-avatar.jpeg" alt="KevinoSINT">
+    </section>
+
+    <section class="search-panel">
+      <div class="field-row">
+        <div class="field">
+          <label>TARGET TYPE</label>
+          <select id="type">
+            <option value="auto">AUTO DETECT</option>
+            <option value="email">EMAIL</option>
+            <option value="phone">PHONE</option>
+            <option value="username">USERNAME</option>
+            <option value="domain">DOMAIN</option>
+            <option value="ip">IP ADDRESS</option>
+          </select>
+        </div>
+        <div class="field target-field">
+          <label>TARGET</label>
+          <input id="target" placeholder="Enter email, phone, username, domain or IP">
+        </div>
+        <button id="investigate" onclick="investigate()">INVESTIGATE <span>→</span></button>
+      </div>
+      <div id="message"></div>
+    </section>
+
+    <section id="results" class="results">
+      <div class="empty">
+        <div class="crosshair">⌁</div>
+        <h3>Awaiting target</h3>
+        <p>Enter a target above to begin an authorized OSINT investigation.</p>
+      </div>
+    </section>
+
+    <footer>
+      <span>KEVINOSINT</span> · Ethical Open-Source Intelligence · Do not use against people without authorization.
+    </footer>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
